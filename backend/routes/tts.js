@@ -12,7 +12,9 @@ import { saveResultVoice } from '../utils/supabase.js'
 const router = express.Router()
 const ttsClient = new TextToSpeechClient()
 
-const storage = new Storage()
+const storage = new Storage({
+  keyFilename: '/etc/secrets/credentials.json' // Render bunu bu path'e yerleştiriyor
+})
 const bucket = storage.bucket(process.env.GCLOUD_BUCKET_NAME)
 
 
