@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Robot:wght@400;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rockwell", sans-serif;
+  color: #eaecef;
+  background-color: #212121;
+}
+
+header {
+  background: #212121;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  width: 100%;
+  max-width: 50px;
+}
+
+.sidenav {
+  width: 15vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  background: #1f1f1f;
+  padding: 1vh 2vh;
+  transition: left 0.5s;
+  left: -100%;
+}
+
+.sidenav.active {
+  left: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  padding-top: 5vh;
+}
+
+ul li {
+  list-style-type: none;
+  padding-bottom: 1vh;
+}
+
+ul li a,
+.linkItem {
+  display: block;
+  padding-left: 0;
+  padding-bottom: 1vh;
+  padding: 1vh;
+  color: #eaecef;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background 0.3s, font-weight 0.3s;
+}
+
+ul li a:hover,
+.linkItem:hover {
+  background: #172b4d;
+}
+
+.linkItem.active {
+  background-color: #1e2a38;
+}
+
+header svg,
+.profileIcon {
+  font-size: 30px;
+  position: absolute;
+  right: 2vw;
+  cursor: pointer;
+}
+
+.dropdown {
+  width: 11vw;
+  height: 10vh;
+  position: absolute;
+  top: 5vh;
+  margin-right: 7px;
+  overflow: hidden;
+  right: 3vw;
+  background: #fafafa;
+  border-radius: 15px 2px;
+  display: none;
+  transition: display 0.2s;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+.dropdown ul {
+  position: relative;
+  padding-left: 0.5vw;
+  padding-top: 1.5vh;
+  cursor: pointer;
+}
+
+.dropdown ul li {
+  position: relative;
+  color: #000000ff;
+  padding: 0.8vh;
+  cursor: pointer;
+}
+
+.homePage {
+  display: block;
+  font-size: 1.5vw;
+  color: #f8f8f8;
+  height: 90vh;
+  padding-left: 17vw;
+}
+
+.main {
+  margin-left: 1vw;
+}
+
+.main-active {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.upgradePlan {
+  width: 11vw;
+  height: 6vh;
+  background-color: #3e5e81ff;
+  border: none;
+  border-radius: 4px;
+  color: #d3d3d3;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1vh;
+}
+
+button {
+  padding: 1.2vh;
+  background-color: rgb(22, 25, 191);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:enabled {
+  background-color: #0069d9;
+}
+
+button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.chatWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.chats {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(212, 212, 212);
+  font-family: "_Figtree_7d5794", "_Figtree_Fallback_7d5794", sans-serif;
+  max-width: 768px;
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.chat-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.chat-container {
+  position: relative;
+  width: 768px;
+  height: 288px;
+  border: 4px dashed #a3a3a3;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-label {
+  position: fixed; /* mutlak çocuk için referans */
+  display: inline-flex; /* içerik kadar genişlik */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  height: 60px;
+  background-color: rgb(29, 78, 216);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 8vh;
+}
+
+.generateButton {
+  margin-top: 8vh;
+}
+
+.upload-label:hover {
+  background-color: #d0d0d0;
+}
+
+/* input’u yalnızca buton boyutunda kapla */
+.upload-label .full-upload {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.result-block {
+  width: 100%;
+  max-width: 50vw;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ddd;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 3vh;
+  margin-top: 2vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.result-prg {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  color: #000;
+}
+
+.audio-to-text {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.summary-btn {
+  margin-top: 16px;
+}
+
+.error-message {
+  margin-top: 20px;
+  color: #d9534f;
+  font-weight: 500;
+}
+
+.audio-player {
+  padding-top: 2vh;
+}
+
+.newChat {
+  border-bottom: 0.5px solid;
+}

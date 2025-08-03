@@ -1,0 +1,25 @@
+{
+  "name": "speech-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd backend && node app.js\" \"cd frontend && npm start\"",
+    "setup": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htr2b/speech-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htr2b/speech-frontend/issues"
+  },
+  "homepage": "https://github.com/htr2b/speech-frontend#readme",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
