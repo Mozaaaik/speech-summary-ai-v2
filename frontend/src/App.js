@@ -28,7 +28,7 @@ const AppContent = () => {
     const timer = setTimeout(() => {
       localStorage.removeItem("token")
       localStorage.clear()
-    }, 1000 * 60 * 2)
+    }, 1000 * 60 * 60 * 24)
 
     return () => clearTimeout(timer)
   }, [])

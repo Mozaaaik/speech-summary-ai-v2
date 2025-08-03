@@ -1,10 +1,7 @@
 import { Storage } from "@google-cloud/storage"
 
 
-const storage = new Storage({
-    projectId: "speechtotex-466107",
-    keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
-})
+const storage = new Storage()
 
 const BUCKET_NAME = 'speechtotexting'
 
