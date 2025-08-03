@@ -1,7 +1,9 @@
 import { Storage } from "@google-cloud/storage"
 
 
-const storage = new Storage()
+const storage = new Storage({
+    keyFilename: '/etc/secrets/credentials.json' // Render bunu bu path'e yerleştiriyor
+})
 
 const BUCKET_NAME = 'speechtotexting'
 

@@ -13,8 +13,7 @@ const router = express.Router()
 const ttsClient = new TextToSpeechClient()
 
 const storage = new Storage({
-  projectId: process.env.GCLOUD_PROJECT_ID,
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
+  keyFilename: '/etc/secrets/credentials.json' // Render bunu bu path'e yerleştiriyor
 })
 const bucket = storage.bucket(process.env.GCLOUD_BUCKET_NAME)
 
