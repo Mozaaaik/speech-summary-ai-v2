@@ -73,7 +73,7 @@ const Register = () => {
                 <h2 className="heading">Register</h2>
 
                 {errorMsg && <div className="error-message">{errorMsg}</div>}
-                {msg && <div className="success-message" style={{ color: 'black', paddingBottom: '10px' }}>Register Successfull</div>}
+                {msg && <div className="success-message" style={{ color: 'red', paddingBottom: '10px' }}>Register Successfull</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div>
