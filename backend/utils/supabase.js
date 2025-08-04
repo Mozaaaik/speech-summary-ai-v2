@@ -51,7 +51,7 @@ router.post('/register', async (req, res) => {
 
     res.status(200).json({
         success: true,
-        message: "Kayıt Başarılı",
+        message: "Register Successfull",
         data: authUserID
     })
 

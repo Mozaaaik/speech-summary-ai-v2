@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './LoginRegister.css'
 
 const Register = () => {
@@ -7,6 +7,7 @@ const Register = () => {
     const emailRef = useRef(null)
     const passwordRef = useRef(null)
     const confirmPasswordRef = useRef(null)
+    const navigate = useNavigate() // navigasyon fonksiyonu
 
     const [errorMsg, setErrorMsg] = useState("")
     const [msg, setMsg] = useState("")
@@ -54,6 +55,10 @@ const Register = () => {
             setMsg(data.message || "Successfuly Registered. Check your mail box.")
 
 
+            setTimeout(() => {
+                navigate("/login", { replace: true })
+            }, 1000 * 3)
+
         } catch (err) {
             console.error("Register error:", err)
             setErrorMsg("Kayıt işlemi sırasında bir hata oluştu.")
@@ -68,7 +73,7 @@ const Register = () => {
                 <h2 className="heading">Register</h2>
 
                 {errorMsg && <div className="error-message">{errorMsg}</div>}
-                {msg && <div className="success-message">{msg}</div>}
+                {msg && <div className="success-message" style={{ color: 'black', paddingBottom: '10px' }}>Register Successfull</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div>
