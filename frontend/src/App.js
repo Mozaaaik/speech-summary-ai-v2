@@ -50,7 +50,7 @@ const AppContent = () => {
       {!isAuthPage && (
         <ProfileMenu show={showDropdown} onClose={() => setShowDropdown(false)} />
       )}
-      {!token && (
+      {(!token && location.pathname !== '/register') && (
         <Navigate to="/login" replace />
       )}
       <main className={isAuthPage ? 'main' : 'main-active'}>
