@@ -53,7 +53,7 @@ Users can record or upload audio, get transcriptions, generate summaries & title
 - Audio recorder + uploader  
 - Transcript highlighting during playback  
 - Role-based UI adjustments  
-- Demo: https://echonote.onurkahan.com  
+- Demo: https://speech-summary-ai-v2.vercel.app/login
 
 ---
 
